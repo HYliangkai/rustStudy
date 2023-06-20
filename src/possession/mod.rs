@@ -19,7 +19,8 @@ pub fn try_possession() {
                                      //但是确实有需要同时两个变量拥有数据的情况,该如何解决?
                                      // ==》这时候就需要对as_one进行一次引用,然后进行修改, 即: 既然目前只有as_one能修改数据.由于指针存储在栈上,直接赋值的行为相当于copy,那么我只能对as_one进行一次引用,这样获取的值就是指针的指针,不是同一个值,但是进行解引用的时候获取的是as_one,就是以as_one的视角进行数据修改-->这种间接获取所有权的行为,称之为 : 借用
     let as_two = &as_one; //获取到as_one的指针
-                          //可以通过 *as_two  / as_one  操作同一份数据
+    let as_two_two = &as_one; //借用可以使用多次
+                              //可以通过 *as_two  / as_one  操作同一份数据
     assert_eq!((*as_two).len(), 3);
     assert_eq!(as_one.is_empty(), false);
     //而直接赋值的行为相当于建立一个新的引用会让as_one失去操作权限

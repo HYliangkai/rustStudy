@@ -23,7 +23,7 @@ pub fn test_two() {
     //断言宏 : 结果为true就不会panic
     assert!(true);
     assert!(1 == 1);
-    fn you(name: &str) -> &str {
+    fn you(_name: &str) -> &str {
         return "sb";
     }
     let ad = "sb";

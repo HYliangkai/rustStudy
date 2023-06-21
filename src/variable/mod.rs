@@ -6,7 +6,7 @@
     + 必须显示声明类型
     + 生命周期和程序的生命周期一致,使用时不需要考虑生命周期的问题
  */
-const MY_LOVE: &str = "原神";
+const _MY_LOVE: &str = "原神";
 
 /**
 2. 变量
@@ -22,7 +22,7 @@ const MY_LOVE: &str = "原神";
     + 可声明为mut,但是改变值的时候要注意线程安全问题
     + 生命周期和程序的生命周期一致,可以在任何地方访问
 */
-static mut IP: &str = "127.0.0.1";
+static mut _IP: &str = "127.0.0.1";
 
 /**
 2.2 普通变量
@@ -32,7 +32,7 @@ static mut IP: &str = "127.0.0.1";
 #[test]
 pub fn test_var() {
     let mut js = "123".to_string();
-    let rs = "098".to_string();
+    let _rs = "098".to_string();
     //mut js 表示 js的值可以被修改
     js = "456".to_string();
     //ts存放的是js的指针(在栈上,64位占8字节,32位占4字节)
@@ -56,14 +56,14 @@ pub fn test_var() {
 #[test]
 pub fn expressions() {
     let x = 1;
-    let mut y = 2;
+    let mut y: i32 = 2;
     let z = y = x;
     println!("{:?}", z); //结果为()
                          //原因是这里的情况是先计算语句y=x的值:() 然后赋值给z,所以等于 ()
                          //=> 类似于 let z = (y=x);
 
     //表达形式1:赋值表达式
-    let mut ep1 = 1024;
+    let mut _ep11 = 1024;
 
     //表达形式2:语句块表达式 : 即:将语句就放置一个语句块中,语句快中最后值就是这个语句快表达式的结果
     //注意:语句快表达式如果想要作为表达式的结果  ,  最后的值是不能加上return的
@@ -75,10 +75,10 @@ pub fn expressions() {
         2333
     };
     //if语句块表达式
-    let ep4 = if ep3 > ep2 { true } else { false };
+    let _ep4: bool = if ep3 > ep2 { true } else { false };
     //loop语句块表达式;返回值是break后面带上的值
     let mut st = 1;
-    let ep5 = loop {
+    let _ep5 = loop {
         st += 1;
         if st > 30 {
             break st;
@@ -86,7 +86,7 @@ pub fn expressions() {
     };
     //for语句块表达式:不支持返回值
     let ve = vec![1, 3, 2, 4, 57];
-    let ep6 = for item in ve {
+    let _ep6 = for item in ve {
         let _ = item + item;
     };
     //white语句块表达式同样不支持返回值
@@ -94,3 +94,4 @@ pub fn expressions() {
 
     //match语句块表达式:略,见matcher
 }
+// 注意在rust中就算是堆数据发生变化也要指明mut

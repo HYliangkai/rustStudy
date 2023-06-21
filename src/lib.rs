@@ -2,6 +2,7 @@ pub mod data_structure;
 pub mod data_type;
 pub mod error;
 pub mod fp;
+pub mod life_time;
 pub mod matchter;
 pub mod other;
 pub mod pack;

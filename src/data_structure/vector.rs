@@ -69,3 +69,7 @@ pub fn use_vector() {
 
     //另一种方式就是用trait的多态能力进行存储
 }
+
+//Tips: rust标准库还有其他类array的数据结构
+//1. VecDeque -- 双端队列,可以高效实现头尾的进出操作
+//2. LinkedList -- 双向链表,std实现

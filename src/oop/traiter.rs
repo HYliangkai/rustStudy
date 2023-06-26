@@ -117,7 +117,7 @@ pub fn run_trait(stu: impl Run) {
     //调用静态函数直接实现类型转换就行了,里外的调用都是一样的
     <User as Run>::say(12); //<xx as yy> : 完全限定语法
 }
-//多限制
+//多限制--使用组合替代继承
 pub fn ru_foo_trait(stu: impl Run + Foo) {
     stu.see()
 }

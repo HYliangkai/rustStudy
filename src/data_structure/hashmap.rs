@@ -30,7 +30,7 @@ pub fn use_hashmap() {
     println!("{:?}", sex);
 
     //update
-    //获取hm中的数据默认是借用数据,所以可以进行直接更改源数据
+    //获取hm中的数据默认是引用数据,所以可以进行直接更改源数据
     let text = "hello world wonderful world";
     let mut map = HashMap::new();
     for word in text.split_whitespace() {

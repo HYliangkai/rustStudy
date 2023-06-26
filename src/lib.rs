@@ -8,5 +8,6 @@ pub mod oop;
 pub mod other;
 pub mod pack;
 pub mod possession;
+pub mod smart_point;
 pub mod test;
 pub mod typer;

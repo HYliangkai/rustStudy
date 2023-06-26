@@ -4,6 +4,7 @@ pub mod error;
 pub mod fp;
 pub mod life_time;
 pub mod matchter;
+pub mod oop;
 pub mod other;
 pub mod pack;
 pub mod possession;

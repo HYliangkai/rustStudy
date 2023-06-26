@@ -6,6 +6,13 @@
 ```rust
 fn need(pa:&i32,pb:&i32)->&str
 ```
+2.定义结构体时属性是指针值时
+```rust
+struct Need{
+  name:&str,
+  age:i32
+}
+```
  */
 #[test]
 pub fn use_life_time() {}

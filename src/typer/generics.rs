@@ -32,3 +32,28 @@ struct DefaultGenerics<T = i32, R = String> {
     age: T,
     kid: R,
 }
+
+struct A {
+    age: i32,
+}
+trait Run {
+    fn running(&self);
+}
+impl Run for A {
+    fn running(&self) {
+        println!("我在跑步");
+    }
+}
+//dyn关键字,强调类型是依赖于某个trait动态分发的,因此不会进行泛型的单态化,避免包膨胀
+// dyn的使用有两种形式 :
+//  第一种是传入 &dyn trait作为类型,(输入的时候要输入指针)
+//  第二种是传入装箱数据 Box<dyn trait>  ;其实两种都是传入地址
+fn hello_world(a: &dyn Run) {
+    a.running()
+}
+
+#[test]
+fn test_dyn() {
+    let aa = A { age: 18 };
+    hello_world(&aa)
+}

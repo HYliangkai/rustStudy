@@ -1,8 +1,10 @@
+pub mod asyncer;
 pub mod data_structure;
 pub mod data_type;
 pub mod error;
 pub mod fp;
 pub mod life_time;
+pub mod macroer;
 pub mod matchter;
 pub mod oop;
 pub mod other;

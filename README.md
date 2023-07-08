@@ -20,7 +20,7 @@ rust学习项目,演练代码
 - [x] macro 宏
 - [ ] unsafe 不安全rust
 - [ ] threads 多线程
-- [ ] async 异步
+- [x] async 异步
 
 
 ## 学习步骤
